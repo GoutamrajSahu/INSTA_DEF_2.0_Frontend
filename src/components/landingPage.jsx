@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 // import Typography from '@material-ui/core/Typography';
 import Navbar from "./navbar";
@@ -6,7 +6,9 @@ import { Box } from "@material-ui/core";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import reading from './icons/reading3.svg';
+import reading from './icons/reading1.svg';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 const UseStyles = makeStyles((theme)=>({
   intro:{
@@ -52,13 +54,18 @@ const UseStyles = makeStyles((theme)=>({
   }
 }));
 
-function landingPage(){
+function LandingPage(){
 const classes = UseStyles();
+
+useEffect(()=>{
+  AOS.init({});
+},[]);
+
 return(
     <div>
        <Navbar />
        <Box className={classes.intro}>
-           <Box className={classes.introNameBox}>
+           <Box className={classes.introNameBox} data-aos="fade-up" data-aos-duration="2200">
                <Box>
                         <h1>
                         <span className={classes.hello}>Welcome to</span>
@@ -72,7 +79,7 @@ return(
                         </div>
                 </Box>
            </Box>
-           <Box className={classes.introPicBox}>
+           <Box className={classes.introPicBox} data-aos="fade-left" data-aos-duration="2200">
                <img src={reading} alt="readingSVG" className={classes.readingImg}></img>
            </Box>
        </Box>   
@@ -80,4 +87,4 @@ return(
 );
    
 }
-export default landingPage;
+export default LandingPage;

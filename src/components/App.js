@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import LandingPage from "./landingPage";
 import AboutMe from "./aboutMe";
 import teamMembers from "./teamMembers";
+import Topic from "./Topics";
+import TopicsData from "./DemoDatas/TopicsData.js";
 
 const useStyles = makeStyles((them)=>({
    root:{
@@ -17,9 +19,10 @@ function App(){
     const classes = useStyles();
     return(
         <div className={classes.root}>
-           <LandingPage/>
-           <AboutMe teamMembers={teamMembers}/>
            <CssBaseline />
+           <LandingPage/>
+           <Topic TopicsData={TopicsData}/>
+           <AboutMe teamMembers={teamMembers}/>
         </div>
            
     );

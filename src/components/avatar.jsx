@@ -1,6 +1,9 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Box } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
+import AOS from 'aos';
+import "aos/dist/aos.css";
+
 
 const UseStyles = makeStyles((theme)=>({
     subImgContainer:{
@@ -37,10 +40,15 @@ const UseStyles = makeStyles((theme)=>({
     }
 }));
 
-function avatar(props){
+function Avatar(props){
+
+    useEffect(()=>{
+        AOS.init({});
+      },[]);
+
    const classes = UseStyles();
     return (
-        <Box className={classes.subImgContainer}>
+        <Box className={classes.subImgContainer} data-aos="fade-up" data-aos-duration="2200">
                  <Box className={classes.imgContainer}>
                  <img className={classes.profilePic} src={props.profilePic} alt="profileImg"></img>
                  </Box>
@@ -59,4 +67,4 @@ function avatar(props){
     );
 }
 
-export default avatar;
+export default Avatar;

@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
           </Typography>
           <Button color="inherit" className={classes.btn}>Home</Button>
           <Button color="inherit" className={classes.btn}>About_us</Button>
+          <Button color="inherit" className={classes.btn}>Login</Button>
+          <Button color="inherit" className={classes.btn}>Logout</Button>
+          <Button color="inherit" className={classes.btn}>My_profile</Button>
           <Button color="inherit" className={classes.btn}>Contact</Button>
         </Toolbar>
       </AppBar>
