@@ -1,6 +1,7 @@
 import React,{useEffect} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 // import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import Navbar from "./navbar";
 import { Box } from "@material-ui/core";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -51,6 +52,11 @@ const UseStyles = makeStyles((theme)=>({
   socialIcons:{
       fontSize: 35,
       marginRight: "20px",
+  },
+  btn:{
+    backgroundColor:"#0F4C75",
+    color: "white",
+    marginTop:"20px"
   }
 }));
 
@@ -76,6 +82,9 @@ return(
                           <a href=""><GitHubIcon style={{color:"#171515"}} className={classes.socialIcons}/></a>
                           <a href=""><LinkedInIcon style={{color:"#0077b5"}} className={classes.socialIcons}/></a>
                           <a href=""><FacebookIcon style={{color:"#4267B2"}} className={classes.socialIcons}/></a>
+                        </div>
+                        <div>
+                          <Button variant="contained" className={classes.btn} data-aos="fade-right" data-aos-duration="2200">Get Started</Button>
                         </div>
                 </Box>
            </Box>
