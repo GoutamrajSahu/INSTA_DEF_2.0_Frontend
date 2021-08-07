@@ -31,7 +31,7 @@ const UseStyles = makeStyles((theme)=>({
 }));
 
 
-function AboutMe(props){
+function AboutUs(props){
     const classes = UseStyles();
 
     useEffect(()=>{
@@ -65,4 +65,4 @@ return(
 );
 }
 
-export default AboutMe;
+export default AboutUs;

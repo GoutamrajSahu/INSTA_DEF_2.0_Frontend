@@ -20,6 +20,12 @@ const UseStyles = makeStyles((them)=>({
 function Topics(props){
     const classes = UseStyles();
 
+    useEffect(()=>{
+        AOS.init({
+            duration:"2200"
+        });
+    },[]);
+
     function renderTopics(ele,index){
     return( 
         <TopicCard key={index} topicName={ele.topicName} desc={ele.desc} image={ele.image}/>

@@ -2,10 +2,11 @@ import React from "react";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import LandingPage from "./landingPage";
-import AboutMe from "./aboutMe";
+import AboutUs from "./aboutUs";
 import teamMembers from "./teamMembers";
 import Topic from "./Topics";
 import TopicsData from "./DemoDatas/TopicsData.js";
+import ContactUs from "./ContactUs";
 
 const useStyles = makeStyles((them)=>({
    root:{
@@ -22,7 +23,8 @@ function App(){
            <CssBaseline />
            <LandingPage/>
            <Topic TopicsData={TopicsData}/>
-           <AboutMe teamMembers={teamMembers}/>
+           <AboutUs teamMembers={teamMembers}/>
+           <ContactUs/>
         </div>
            
     );
