@@ -45,9 +45,10 @@ const useStyles = makeStyles((theme) => ({
           <Typography variant="h4" className={classes.title}>
             INSTA_DEF
           </Typography>
-          <Button color="inherit" className={classes.btn}>Home</Button>
+          <Button color="inherit" href="/" className={classes.btn}>Home</Button>
           <Button color="inherit" className={classes.btn}>About_us</Button>
-          <Button color="inherit" className={classes.btn}>Login</Button>
+          <Button color="inherit" href="/login" className={classes.btn}>Login</Button>
+          <Button color="inherit" href="/signup" className={classes.btn}>Sign_up</Button>
           <Button color="inherit" className={classes.btn}>Logout</Button>
           <Button color="inherit" className={classes.btn}>My_profile</Button>
           <Button color="inherit" className={classes.btn}>Contact</Button>

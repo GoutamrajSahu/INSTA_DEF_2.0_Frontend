@@ -7,6 +7,8 @@ import { Box } from "@material-ui/core";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
 import reading from './icons/reading1.svg';
 import AOS from 'aos';
 import "aos/dist/aos.css";
@@ -81,7 +83,9 @@ return(
                         <div>
                           <a href=""><GitHubIcon style={{color:"#171515"}} className={classes.socialIcons}/></a>
                           <a href=""><LinkedInIcon style={{color:"#0077b5"}} className={classes.socialIcons}/></a>
+                          <a href=""><TwitterIcon style={{color:"#1DA1F2"}} className={classes.socialIcons}/></a>
                           <a href=""><FacebookIcon style={{color:"#4267B2"}} className={classes.socialIcons}/></a>
+                          <a href=""><InstagramIcon style={{color:"#8a3ab9"}} className={classes.socialIcons}/></a>
                         </div>
                         <div>
                           <Button variant="contained" className={classes.btn} data-aos="fade-right" data-aos-duration="2200">Get Started</Button>

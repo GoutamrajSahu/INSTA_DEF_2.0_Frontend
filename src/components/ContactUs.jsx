@@ -47,7 +47,7 @@ const classes = UseStyles();
 
 useEffect(()=>{
     AOS.init({
-        duration:"2200"
+        duration:"1700"
     });
 },[]);
 
