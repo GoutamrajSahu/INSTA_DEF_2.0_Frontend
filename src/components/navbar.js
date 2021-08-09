@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import LibraryBooksRoundedIcon from '@material-ui/icons/LibraryBooksRounded';
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   bar:{
@@ -45,13 +46,35 @@ const useStyles = makeStyles((theme) => ({
           <Typography variant="h4" className={classes.title}>
             INSTA_DEF
           </Typography>
-          <Button color="inherit" href="/" className={classes.btn}>Home</Button>
+
+          <NavLink  to="/" style={{textDecoration:"none", color:"white"}} >
+          <Button color="inherit" className={classes.btn}>Home</Button>
+          </NavLink>
+
+          <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
           <Button color="inherit" className={classes.btn}>About_us</Button>
-          <Button color="inherit" href="/login" className={classes.btn}>Login</Button>
-          <Button color="inherit" href="/signup" className={classes.btn}>Sign_up</Button>
+          </NavLink>
+
+          <NavLink  to="/login" style={{textDecoration:"none", color:"white"}} >
+          <Button color="inherit" className={classes.btn}>Login</Button>
+          </NavLink>
+
+          <NavLink  to="/signup" style={{textDecoration:"none", color:"white"}} >
+          <Button color="inherit" className={classes.btn}>Sign_up</Button>
+          </NavLink>
+          
+          <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
           <Button color="inherit" className={classes.btn}>Logout</Button>
+          </NavLink>
+         
+          <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
           <Button color="inherit" className={classes.btn}>My_profile</Button>
+          </NavLink>
+          
+          <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
           <Button color="inherit" className={classes.btn}>Contact</Button>
+          </NavLink>
+          
         </Toolbar>
       </AppBar>
     </div>

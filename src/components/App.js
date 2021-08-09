@@ -5,7 +5,8 @@ import Home from "./Home";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import {Route,Switch} from "react-router-dom";
-
+// import TopicsData from "./DemoDatas/TopicsData.js";
+import TopicContent from "./TopicContent";
 const useStyles = makeStyles((them)=>({
    root:{
     minHeight:"100vh",
@@ -20,6 +21,7 @@ function App(){
            <Route exact path="/" component={Home} />
            <Route exact path="/login" component={Login}/>
            <Route exact path="/signup" component={SignUp}/>
+           <Route exact path="/topiccontent/:topicID" component={TopicContent}/>
         </Switch>
         </div>     
     );

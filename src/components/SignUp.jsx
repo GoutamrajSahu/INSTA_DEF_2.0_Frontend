@@ -1,14 +1,15 @@
-import React,{useEffect} from "react";
+// import React,{useEffect} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
-import AOS from 'aos';
-import "aos/dist/aos.css";
+// import AOS from 'aos';
+// import "aos/dist/aos.css";
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Navbar from "./navbar";
 import Footer from "./Footer";
+import { NavLink } from 'react-router-dom';
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // import GitHubIcon from '@material-ui/icons/GitHub';
 // import FacebookIcon from '@material-ui/icons/Facebook';
@@ -85,7 +86,7 @@ return(
                     >
                     Sign Up
                     </Button>
-                    <a href="/login" style={{textDecoration:"none", fontFamily:"Josefin Sans"}}><h4>Already have an account?</h4></a>
+                    <NavLink to="/login" style={{textDecoration:"none", fontFamily:"Josefin Sans"}}><h4>Already have an account?</h4></NavLink>
                 </form>
                 
             </Paper>

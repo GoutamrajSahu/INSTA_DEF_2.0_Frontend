@@ -1,8 +1,8 @@
-import React,{useEffect} from "react";
+// import React,{useEffect} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Grid } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
-import AOS from 'aos';
+// import AOS from 'aos';
 import "aos/dist/aos.css";
 import Paper from '@material-ui/core/Paper';
 // import TextField from '@material-ui/core/TextField';
@@ -13,6 +13,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import { NavLink } from "react-router-dom";
 
 const UseStyles = makeStyles((theme)=>({
 root:{
@@ -68,28 +69,28 @@ function getYear(){
                 <Box className={classes.upGrid}>
                 <Typography style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 25, paddingTop:"20px"}}>Menu</Typography>
                    <Typography style={{fontFamily:"Josefin Sans",fontSize: 20, padding:"5px"}}>
-                   <a href="#" className={classes.links}> Home</a> <br/>
-                   <a href="#" className={classes.links}> Topics </a> <br/>
-                   <a href="#" className={classes.links}> My Profile</a> <br/>
-                   <a href="#" className={classes.links}> About Us</a> <br/>
-                   <a href="#" className={classes.links}> Contact Us </a>
+                   <NavLink to="/" className={classes.links}> Home</NavLink> <br/>
+                   <NavLink to="#" className={classes.links}> Topics </NavLink> <br/>
+                   <NavLink to="#" className={classes.links}> My Profile</NavLink> <br/>
+                   <NavLink to="#" className={classes.links}> About Us</NavLink> <br/>
+                   <NavLink to="#" className={classes.links}> Contact Us </NavLink>
                    </Typography>
                 </Box>
               </Grid>
               <Grid xs={4} item className={classes.grids}>
                 <Box className={classes.upGrid}>
                 <Typography style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 25, paddingTop:"20px"}}>Socials</Typography>
-                   <a href="#" className={classes.links}><LinkedInIcon style={{color:"#0077b5"}}/> LinkedIn</a> <br/>
-                   <a href="#" className={classes.links}><GitHubIcon style={{color:"#171515"}}/> GitHub</a> <br/>
-                   <a href="#" className={classes.links}><TwitterIcon style={{color:"#1DA1F2"}}/> Twitter</a> <br/>
-                   <a href="#" className={classes.links}><FacebookIcon style={{color:"#4267B2"}}/> Facebook</a> <br/>
-                   <a href="#" className={classes.links}><InstagramIcon style={{color:"#8a3ab9"}}/> Instagram</a>                   
+                   <NavLink to="#" className={classes.links}><LinkedInIcon style={{color:"#0077b5"}}/> LinkedIn</NavLink> <br/>
+                   <NavLink to="#" className={classes.links}><GitHubIcon style={{color:"#171515"}}/> GitHub</NavLink> <br/>
+                   <NavLink to="#" className={classes.links}><TwitterIcon style={{color:"#1DA1F2"}}/> Twitter</NavLink> <br/>
+                   <NavLink to="#" className={classes.links}><FacebookIcon style={{color:"#4267B2"}}/> Facebook</NavLink> <br/>
+                   <NavLink to="#" className={classes.links}><InstagramIcon style={{color:"#8a3ab9"}}/> Instagram</NavLink>                   
                 </Box>
               </Grid>
               <Grid xs={12} item className={classes.grids}>
               <Typography className={classes.downTexts}>
-                  <a href="#" className={classes.links}> Terms & conditions | Privacy</a>
-                  <a href="#" className={classes.links}> instadef@gmail.com</a>
+                  <NavLink to="#" className={classes.links}> Terms & conditions | Privacy</NavLink>
+                  <NavLink to="#" className={classes.links}> instadef@gmail.com</NavLink>
                   Copyright©{getYear()}
               </Typography>
               </Grid>

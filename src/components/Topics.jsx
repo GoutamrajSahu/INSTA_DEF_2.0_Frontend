@@ -28,7 +28,7 @@ function Topics(props){
 
     function renderTopics(ele,index){
     return( 
-        <TopicCard key={index} topicName={ele.topicName} desc={ele.desc} image={ele.image}/>
+        <TopicCard key={index} topicName={ele.topicName} desc={ele.desc} definitions={ele.definitions} id={ele.id} image={ele.image}/>
         );
     }
 
