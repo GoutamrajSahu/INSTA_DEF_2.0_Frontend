@@ -14,6 +14,7 @@ const UseStyles = makeStyles((them)=>({
         width:"100%",
         paddingLeft: "10%",
         paddingRight: "10%",
+        paddingTop: "10vh"
     },
 }));
 
@@ -33,7 +34,7 @@ function Topics(props){
     }
 
 return(
-    <Box className={classes.root}>
+    <Box className={classes.root} id="topics">
         <Typography style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 40, paddingBottom:"30px"}} data-aos="fade-up">TOPICS</Typography> 
         <Grid container>  
         {props.TopicsData.map(renderTopics)}

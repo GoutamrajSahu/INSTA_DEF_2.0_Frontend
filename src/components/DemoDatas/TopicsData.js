@@ -1,6 +1,8 @@
 const Topics=[
     {
         "id": 0,
+        "creatorName":"Goutamraj Sahu",
+        "creatorEmailId":"grs@gmail.com",
         "topicName":"Computer",
         "desc":"This topic has all the basic information on Computer.",
         "image":"/assets/TopicPics/Cover2.jpg",
@@ -14,6 +16,8 @@ const Topics=[
     },
     {
         "id": 1,
+        "creatorName":"Goutamraj Sahu",
+        "creatorEmailId":"grs@gmail.com",
         "topicName":"Hardware",
         "desc":"This topic has all the basic information on Computer Hardware.",
         "image":"/assets/TopicPics/pic2.png",
@@ -32,6 +36,8 @@ const Topics=[
     },
     {
         "id": 2,
+        "creatorName":"Sourav Sahu",
+        "creatorEmailId":"ss@gmail.com",
         "topicName":"Software", 
         "desc":"This topic has all the basic information on Computer Software.",
         "image":"/assets/TopicPics/Cover2.jpg",
@@ -55,6 +61,8 @@ const Topics=[
     },
     {
         "id": 3,
+        "creatorName":"Sourav Sahu",
+        "creatorEmailId":"ss@gmail.com",
         "topicName":"Memory",
         "desc":"This topic has all the basic information on Memory.",
         "image":"/assets/TopicPics/pic2.png",
@@ -83,6 +91,8 @@ const Topics=[
     },
     {
         "id": 4,
+        "creatorName":"Goutamraj Sahu",
+        "creatorEmailId":"grs@gmail.com",
         "topicName":"RAM",
         "desc":"This topic has all the basic information on RAM.",
         "image":"/assets/TopicPics/Cover2.jpg",

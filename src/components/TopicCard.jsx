@@ -16,6 +16,9 @@ import "aos/dist/aos.css";
 // import {BrowserRouter} from "react-router-dom";
 
 const useStyles = makeStyles({
+    root:{
+      borderRadius:"30px"
+    },
     media: {
       minHeight: 155,
     },
@@ -56,11 +59,9 @@ const useStyles = makeStyles({
           {/* <Button size="small" color="primary">
             Share
           </Button> */}
-
             <Button href={`/topiccontent/${props.id}`} size="small" color="primary">
               Learn More
             </Button>
-
         </CardActions>
       </Card>
     </Grid>

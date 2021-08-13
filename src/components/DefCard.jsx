@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 // import "aos/dist/aos.css";
 
 const useStyles = makeStyles({
+    root:{
+      borderRadius: "30px"
+    },
     media: {
       minHeight: 70,
     },
@@ -34,7 +37,7 @@ const useStyles = makeStyles({
             <Typography gutterBottom variant="h5" component="h2">
              {props.defOn}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" color="textSecondary" component="p" style={{fontSize:19}}>
              {props.definition}
             </Typography>
           </CardContent>

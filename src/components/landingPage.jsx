@@ -12,6 +12,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import reading from './icons/reading1.svg';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import { Link as Scroll} from 'react-scroll';
 
 const UseStyles = makeStyles((theme)=>({
   intro:{
@@ -72,9 +73,9 @@ useEffect(()=>{
 return(
     <div>
        <Navbar />
-       <Box className={classes.intro}>
+       <Box className={classes.intro} id="landingPage">
            <Box className={classes.introNameBox} data-aos="fade-up" data-aos-duration="2200">
-               <Box>
+                 <Box>
                         <h1>
                         <span className={classes.hello}>Welcome to</span>
                         <br/>
@@ -88,9 +89,11 @@ return(
                           <a href=""><InstagramIcon style={{color:"#8a3ab9"}} className={classes.socialIcons}/></a>
                         </div>
                         <div>
-                          <Button variant="contained" className={classes.btn} data-aos="fade-right" data-aos-duration="2200">Get Started</Button>
+                          <Scroll to="topics" smooth={true}>
+                             <Button variant="contained" className={classes.btn} data-aos="fade-right" data-aos-duration="2200">Get Started</Button>
+                          </Scroll>
                         </div>
-                </Box>
+                 </Box>
            </Box>
            <Box className={classes.introPicBox} data-aos="fade-left" data-aos-duration="2200">
                <img src={reading} alt="readingSVG" className={classes.readingImg}></img>

@@ -12,7 +12,8 @@ const UseStyles = makeStyles((theme)=>({
       marginTop:"10vh",
       display:"flex",
       flexDirection: "column",
-      alignItems:"center"
+      alignItems:"center",
+      paddingTop:"7vh"
     },
     imgParentContainer:{
        display:"flex",
@@ -49,7 +50,7 @@ function AboutUs(props){
     }
 
 return(
-    <Box className={classes.root} >
+    <Box className={classes.root} id="aboutUs">
         <Typography component="div" data-aos="fade-up" data-aos-duration="2200">
         <h1 style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 40}}>ABOUT_US</h1>
         </Typography>

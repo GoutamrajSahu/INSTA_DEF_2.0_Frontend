@@ -7,6 +7,10 @@ import SignUp from "./SignUp";
 import {Route,Switch} from "react-router-dom";
 // import TopicsData from "./DemoDatas/TopicsData.js";
 import TopicContent from "./TopicContent";
+import MyProfile from "./MyProfile";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TopicsData from "./DemoDatas/TopicsData.js";
+
 const useStyles = makeStyles((them)=>({
    root:{
     minHeight:"100vh",
@@ -17,11 +21,13 @@ function App(){
     const classes = useStyles();
     return(
         <div className={classes.root}>
+        <CssBaseline/>
         <Switch>
            <Route exact path="/" component={Home} />
            <Route exact path="/login" component={Login}/>
            <Route exact path="/signup" component={SignUp}/>
            <Route exact path="/topiccontent/:topicID" component={TopicContent}/>
+           <Route exact path="/myprofile" component={()=><MyProfile TopicsData={TopicsData}/>}/>
         </Switch>
         </div>     
     );

@@ -56,7 +56,7 @@ function handleChange(event){
 }
 
 return(
-    <Box className={classes.root}>
+    <Box className={classes.root} id="contactUs">
         <Typography style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 40, padding:"10px"}} data-aos="fade-up">
         CONTACT_US
         </Typography>

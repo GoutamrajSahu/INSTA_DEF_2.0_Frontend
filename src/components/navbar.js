@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import LibraryBooksRoundedIcon from '@material-ui/icons/LibraryBooksRounded';
 import { NavLink } from 'react-router-dom';
+import { Link as Scroll} from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   bar:{
@@ -41,39 +42,56 @@ const useStyles = makeStyles((theme) => ({
       <AppBar position="fixed">
         <Toolbar className={classes.bar}>
           <IconButton edge="start" className={classes.icon} color="inherit" aria-label="menu">
-            <LibraryBooksRoundedIcon style={{fontSize:30}} />
+           <Scroll to="landingPage" smooth={true}>
+              <NavLink to="/">
+                <LibraryBooksRoundedIcon style={{fontSize:30, color:"white"}} />
+              </NavLink>
+           </Scroll>
+            
           </IconButton>
-          <Typography variant="h4" className={classes.title}>
-            INSTA_DEF
-          </Typography>
+            <Typography variant="h4" className={classes.title}>
+              INSTA_DEF
+            </Typography>
+  
+          <Scroll to="landingPage" smooth={true}>
+            <NavLink  to="/" style={{textDecoration:"none", color:"white"}} >
+             <Button color="inherit" className={classes.btn}>Home</Button>
+            </NavLink>
+          </Scroll>
 
-          <NavLink  to="/" style={{textDecoration:"none", color:"white"}} >
-          <Button color="inherit" className={classes.btn}>Home</Button>
-          </NavLink>
-
-          <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
-          <Button color="inherit" className={classes.btn}>About_us</Button>
-          </NavLink>
-
-          <NavLink  to="/login" style={{textDecoration:"none", color:"white"}} >
-          <Button color="inherit" className={classes.btn}>Login</Button>
-          </NavLink>
-
-          <NavLink  to="/signup" style={{textDecoration:"none", color:"white"}} >
-          <Button color="inherit" className={classes.btn}>Sign_up</Button>
-          </NavLink>
-          
-          <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
-          <Button color="inherit" className={classes.btn}>Logout</Button>
-          </NavLink>
+          <Scroll to="topics" smooth={true}>
+            <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
+             <Button color="inherit" className={classes.btn}>Topics</Button>
+            </NavLink>
+          </Scroll>
          
           <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
-          <Button color="inherit" className={classes.btn}>My_profile</Button>
+           <Button color="inherit" className={classes.btn}>My_profile</Button>
+          </NavLink>  
+          
+          <NavLink  to="/login" style={{textDecoration:"none", color:"white"}} >
+           <Button color="inherit" className={classes.btn}>Login</Button>
+          </NavLink>
+          
+          <NavLink  to="/signup" style={{textDecoration:"none", color:"white"}} >
+           <Button color="inherit" className={classes.btn}>Sign_up</Button>
           </NavLink>
           
           <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
-          <Button color="inherit" className={classes.btn}>Contact</Button>
+           <Button color="inherit" className={classes.btn}>Logout</Button>
           </NavLink>
+
+          <Scroll to="aboutUs" smooth={true}>
+            <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
+             <Button color="inherit" className={classes.btn}>About_us</Button>
+            </NavLink>
+          </Scroll>
+          
+          <Scroll to="contactUs" smooth={true}>
+            <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
+            <Button color="inherit" className={classes.btn}>Contact</Button>
+            </NavLink>
+          </Scroll>
           
         </Toolbar>
       </AppBar>

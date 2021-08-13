@@ -2,8 +2,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
-// import AOS from 'aos';
-// import "aos/dist/aos.css";
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';

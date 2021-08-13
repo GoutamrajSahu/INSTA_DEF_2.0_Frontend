@@ -14,6 +14,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { NavLink } from "react-router-dom";
+import { Link as Scroll} from 'react-scroll';
 
 const UseStyles = makeStyles((theme)=>({
 root:{
@@ -69,11 +70,22 @@ function getYear(){
                 <Box className={classes.upGrid}>
                 <Typography style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 25, paddingTop:"20px"}}>Menu</Typography>
                    <Typography style={{fontFamily:"Josefin Sans",fontSize: 20, padding:"5px"}}>
-                   <NavLink to="/" className={classes.links}> Home</NavLink> <br/>
-                   <NavLink to="#" className={classes.links}> Topics </NavLink> <br/>
-                   <NavLink to="#" className={classes.links}> My Profile</NavLink> <br/>
-                   <NavLink to="#" className={classes.links}> About Us</NavLink> <br/>
-                   <NavLink to="#" className={classes.links}> Contact Us </NavLink>
+                        <Scroll to="landingPage" smooth={true}>
+                            <NavLink to="/" className={classes.links}> Home</NavLink> <br/>
+                        </Scroll>
+                        <Scroll to="topics" smooth={true}>
+                            <NavLink to="#" className={classes.links}> Topics </NavLink> <br/>
+                        </Scroll>
+
+                        <NavLink to="#" className={classes.links}> My Profile</NavLink> <br/>
+
+                        <Scroll to="aboutUs" smooth={true}>
+                            <NavLink to="#" className={classes.links}> About Us</NavLink> <br/>
+                        </Scroll>
+                        
+                        <Scroll to="contactUs" smooth={true}>
+                            <NavLink to="#" className={classes.links}> Contact Us </NavLink>
+                        </Scroll>
                    </Typography>
                 </Box>
               </Grid>
