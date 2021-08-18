@@ -17,6 +17,7 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 // import DefCard from './DefCard';
 import TopicCard from "./TopicCard";
+import Dashboard from "./Dashboard";
 
 
 const UseStyles = makeStyles((theme)=>({
@@ -33,9 +34,6 @@ profilePic:{
     backgroundImage: `url(${process.env.PUBLIC_URL+'assets/myProfilePic1.png'})`,
     backgroundSize: "cover",
     marginTop:"10px"
-},
-dashboard:{
-  height:"90vh"
 },
 MyTopics:{
   height:"64vh",
@@ -63,22 +61,12 @@ return(<TopicCard key={index} topicName={ele.topicName} desc={ele.desc} definiti
            <Navbar/>
                 <Grid xs={12} container item className={classes.root}>
                    <Grid item xs={2}>
-                       <Paper className={classes.dashboard} elevation={4}>
-                       <Typography 
-                            style={{
-                                fontFamily:"Josefin Sans",
-                                fontWeight:"bolder",
-                                fontSize: 25,
-                                textAlign: "center"
-                                }}>
-                            DASHBOARD
-                        </Typography>
-                       </Paper>
+                     <Dashboard/>
                    </Grid>
                    <Grid item xs={10}>
                       {/* <Card className={classes.backGround} elevation={4}>
                       </Card> */}
-                      <Paper style={{display:"flex", flexDirection:"row",minHeight:"25vh"}} elevation={3}>
+                      <Paper style={{display:"flex", flexDirection:"row",minHeight:"25vh"}} elevation={1}>
                         <Paper className={classes.profilePic} elevation={10}>
                         </Paper>
                         <Typography 
