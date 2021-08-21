@@ -27,7 +27,7 @@ function Home(){
            <Topic TopicsData={TopicsData}/>
            <AboutUs teamMembers={teamMembers}/>
            <ContactUs/>
-           <Footer/>
+           {/* <Footer/> */}
         </div>
            
     );

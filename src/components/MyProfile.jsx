@@ -1,24 +1,15 @@
 import React,{useEffect} from "react";
 import { makeStyles } from '@material-ui/core/styles';
-// import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Navbar from "./navbar";
 import { Box,Grid, Typography } from "@material-ui/core";
-// import LinkedInIcon from '@material-ui/icons/LinkedIn';
-// import GitHubIcon from '@material-ui/icons/GitHub';
-// import FacebookIcon from '@material-ui/icons/Facebook';
-// import TwitterIcon from '@material-ui/icons/Twitter';
-// import InstagramIcon from '@material-ui/icons/Instagram';
-import reading from './icons/reading1.svg';
-import AOS from 'aos';
 import "aos/dist/aos.css";
-import Footer from "./Footer";
 import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
-// import DefCard from './DefCard';
-import TopicCard from "./TopicCard";
 import Dashboard from "./Dashboard";
-
+import MyTopics from "./MyTopics";
+import EditProfile from "./EditProfile";
+import AddNewTopics from "./AddNewTopic";
+import AddNewDef from "./AddNewDef";
+import UpdateDefs from "./UpdateDefs";
+import {Redirect, Route} from "react-router-dom";
 
 const UseStyles = makeStyles((theme)=>({
 root:{
@@ -29,16 +20,14 @@ profilePic:{
     height:150,
     width:150,
     borderRadius:"50px",
-    // transform: "translateY(-100px)",
     marginLeft:"5%",
     backgroundImage: `url(${process.env.PUBLIC_URL+'assets/myProfilePic1.png'})`,
     backgroundSize: "cover",
     marginTop:"10px"
 },
-MyTopics:{
+dynamicAreaForDashboard:{
   height:"64vh",
   width:"100%",
-  // backgroundColor:"green",
   overflow:"hidden",
   overflowY: "scroll"
 }
@@ -47,45 +36,47 @@ MyTopics:{
 function MyProfile(props){
 const classes = UseStyles();
 
-const myTopics = props.TopicsData.filter(getTopics)
-function getTopics(ele){
-  return(ele.creatorEmailId == "grs@gmail.com");
-  }
-
-function renderTopics(ele,index){
-return(<TopicCard key={index} topicName={ele.topicName} desc={ele.desc} definitions={ele.definitions} id={ele.id} image={ele.image}/>);
-}
-
     return(
         <>
-           <Navbar/>
                 <Grid xs={12} container item className={classes.root}>
                    <Grid item xs={2}>
                      <Dashboard/>
                    </Grid>
                    <Grid item xs={10}>
-                      {/* <Card className={classes.backGround} elevation={4}>
-                      </Card> */}
                       <Paper style={{display:"flex", flexDirection:"row",minHeight:"25vh"}} elevation={1}>
                         <Paper className={classes.profilePic} elevation={10}>
                         </Paper>
-                        <Typography 
-                            style={{
-                                fontFamily:"Josefin Sans",
-                                fontWeight:"bolder",
-                                fontSize: 35,
-                                padding:"10px",
-                                marginTop:110
-                                }}>
-                            Goutamraj Sahu
-                        </Typography>
+                        <Box>
+                          <Typography 
+                              style={{
+                                  fontFamily:"Josefin Sans",
+                                  fontWeight:"bolder",
+                                  fontSize: 35,
+                                  padding:"4px",
+                                  marginTop:80
+                                  }}>   
+                              Goutamraj Sahu
+                          </Typography>
+                          <Typography 
+                          style={{
+                                  fontFamily:"Josefin Sans",
+                                  fontWeight:"bold",
+                                  fontSize: 20,
+                                  }}>
+                              UserName:___GRS___
+                          </Typography>
+                        </Box>
                       </Paper>
-                      <Grid container item xs={12} className={classes.MyTopics}>
-                       {myTopics.map(renderTopics)}
-                      </Grid>
+                      <Box className={classes.dynamicAreaForDashboard}>
+                        <Route exact path="/myprofile/topicsdata" render={()=>{return <MyTopics TopicsData = {props.TopicsData}/>}}/>
+                        <Route exact path="/myprofile/editprofile" render={()=><EditProfile/>}/>
+                        <Route exact path="/myprofile/addnewtopic" render={()=><AddNewTopics/>}/>
+                        <Route exact path="/myprofile/addnewdef" render={()=><AddNewDef/>}/>
+                        <Route exact path="/myprofile/updatedefs" render={()=><UpdateDefs/>}/>
+                        <Redirect to="/myprofile/topicsdata"/>
+                      </Box>
                    </Grid>
                 </Grid>
-           <Footer/>
         </>
     );
 

@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
             </NavLink>
           </Scroll>
          
-          <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
+          <NavLink  to="/myprofile" style={{textDecoration:"none", color:"white"}} >
            <Button color="inherit" className={classes.btn}>My_profile</Button>
           </NavLink>  
           

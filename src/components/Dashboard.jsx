@@ -8,6 +8,12 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { Box,Grid,Typography,Paper} from "@material-ui/core";
+import EditIcon from '@material-ui/icons/Edit';
+import QueueIcon from '@material-ui/icons/Queue';
+import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
+import UpdateIcon from '@material-ui/icons/Update';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import { NavLink } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,14 +40,40 @@ const useStyles = makeStyles((theme) => ({
         </Typography>
         <Divider />
         <List>
-          {["Edit_Profile", "Add_New_Topic", "Add_New_Def", "Update_Defs"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+              <ListItem component={NavLink} to="/myprofile/topicsdata" button key={"My_Topics"}>
+                <ListItemIcon>
+                  <LibraryBooksIcon/>
+                </ListItemIcon>
+                <ListItemText primary={"My_Topics"}/>
+              </ListItem>
+
+              <ListItem  component={NavLink} to="/myprofile/editprofile" button key={"Edit_Profile"}>
+                <ListItemIcon>
+                  <EditIcon/>
+                </ListItemIcon>
+                <ListItemText primary={"Edit_Profile"}/>
+              </ListItem>
+
+              <ListItem component={NavLink} to="/myprofile/addnewtopic" button key={"Add_New_Topic"}>
+                <ListItemIcon>
+                  <QueueIcon/>
+                </ListItemIcon>
+                <ListItemText primary={"Add_New_Topic"}/>
+              </ListItem>
+
+              <ListItem component={NavLink} to="/myprofile/addnewdef" button key={"Add_New_Def"}>
+                <ListItemIcon>
+                  <PlaylistAddIcon/>
+                </ListItemIcon>
+                <ListItemText primary={"Add_New_Def"}/>
+              </ListItem>
+
+              <ListItem component={NavLink} to="/myprofile/updatedefs" button key={"Update_Defs"}>
+                <ListItemIcon>
+                  <UpdateIcon/>
+                </ListItemIcon>
+                <ListItemText primary={"Update_Defs"}/>
+              </ListItem>
         </List>
       </Box>
     </Paper>

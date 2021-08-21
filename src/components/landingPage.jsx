@@ -72,7 +72,7 @@ useEffect(()=>{
 
 return(
     <div>
-       <Navbar />
+       {/* <Navbar /> */}
        <Box className={classes.intro} id="landingPage">
            <Box className={classes.introNameBox} data-aos="fade-up" data-aos-duration="2200">
                  <Box>

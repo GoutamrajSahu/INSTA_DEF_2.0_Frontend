@@ -10,6 +10,8 @@ import TopicContent from "./TopicContent";
 import MyProfile from "./MyProfile";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TopicsData from "./DemoDatas/TopicsData.js";
+import Navbar from "./navbar";
+import Footer from "./Footer";
 
 const useStyles = makeStyles((them)=>({
    root:{
@@ -22,13 +24,15 @@ function App(){
     return(
         <div className={classes.root}>
         <CssBaseline/>
+        <Navbar/>
         <Switch>
            <Route exact path="/" component={Home} />
            <Route exact path="/login" component={Login}/>
            <Route exact path="/signup" component={SignUp}/>
            <Route exact path="/topiccontent/:topicID" component={TopicContent}/>
-           <Route exact path="/myprofile" component={()=><MyProfile TopicsData={TopicsData}/>}/>
+           <Route path="/myprofile" component={()=><MyProfile TopicsData={TopicsData}/>}/>
         </Switch>
+        <Footer/>
         </div>     
     );
 };

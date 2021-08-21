@@ -60,7 +60,6 @@ const classes = UseStyles();
 
 return(
     <>
-        <Navbar/>
         <Box className={classes.root}>
             <Typography style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 40, padding:"10px"}}>
             SIGN_UP
@@ -89,7 +88,6 @@ return(
                 
             </Paper>
         </Box>
-        <Footer/>
     </>
 );
 
