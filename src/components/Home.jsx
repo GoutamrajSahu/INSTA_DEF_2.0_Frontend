@@ -7,8 +7,6 @@ import teamMembers from "./teamMembers";
 import Topic from "./Topics";
 import TopicsData from "./DemoDatas/TopicsData.js";
 import ContactUs from "./ContactUs";
-import Footer from "./Footer";
-// import {Route,Switch} from "react-router-dom";
 
 const useStyles = makeStyles((them)=>({
    root:{

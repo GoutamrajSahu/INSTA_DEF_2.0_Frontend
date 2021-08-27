@@ -2,7 +2,6 @@ import React,{useEffect} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 // import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Navbar from "./navbar";
 import { Box } from "@material-ui/core";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';

@@ -2,17 +2,11 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
-// import AOS from 'aos';
 import "aos/dist/aos.css";
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import Navbar from "./navbar";
-import Footer from "./Footer";
 import { NavLink } from 'react-router-dom';
-// import LinkedInIcon from '@material-ui/icons/LinkedIn';
-// import GitHubIcon from '@material-ui/icons/GitHub';
-// import FacebookIcon from '@material-ui/icons/Facebook';
 
 const UseStyles = makeStyles((theme)=>({
 root:{
@@ -50,15 +44,6 @@ button:{
 function Login(){
 const classes = UseStyles();
 
-// useEffect(()=>{
-//     AOS.init({
-//         duration:"2200"
-//     });
-// },[]);
-
-// function handleChange(event){
-//     console.log(event.target.value);
-// }
 
 return(
     <>

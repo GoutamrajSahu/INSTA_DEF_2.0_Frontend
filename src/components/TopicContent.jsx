@@ -3,11 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, Grid } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
-// import AOS from 'aos';
-// import "aos/dist/aos.css";
 import DefCard from "./DefCard";
-import Navbar from "./navbar";
-import Footer from "./Footer";
 import TopicsData from "./DemoDatas/TopicsData.js";
 
 
@@ -42,7 +38,6 @@ function TopicContent(props){
 return(
     <>
     <CssBaseline />
-    <Navbar/>
         <Box className={classes.root}>
             <Typography style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 40}}>
             {TopicsData[ID].topicName}
@@ -51,7 +46,6 @@ return(
             {definitions.map(renderDefinitions)}
             </Grid>
         </Box>
-    <Footer/>
     </>
 );
 }

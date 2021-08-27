@@ -38,7 +38,7 @@ const useStyles = makeStyles({
 
 
     return (
-      <Grid item xs={12} sm={3} className={classes.card} data-aos="fade-up">
+      <Grid item xs={12} sm={3} className={classes.card}>
       <Card className={classes.root} elevation={6}>
         <CardActionArea>
           <CardMedia

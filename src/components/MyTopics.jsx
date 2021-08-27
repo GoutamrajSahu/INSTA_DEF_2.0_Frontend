@@ -17,7 +17,7 @@ const UseStyles = makeStyles((theme)=>({
 
         const myTopics = props.TopicsData.filter(getTopics)
         function getTopics(ele){
-          return(ele.creatorEmailId == "grs@gmail.com");
+          return(ele.creatorEmailId === "grs@gmail.com");
           }
         
         function renderTopics(ele,index){
