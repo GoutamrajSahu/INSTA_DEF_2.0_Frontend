@@ -68,12 +68,12 @@ const classes = UseStyles();
                         </Box>
                       </Paper>
                       <Box className={classes.dynamicAreaForDashboard}>
-                        <Route exact path="/myprofile/topicsdata" render={()=>{return <MyTopics TopicsData = {props.TopicsData}/>}}/>
+                        <Route exact path="/myprofile" render={()=>{return <MyTopics TopicsData = {props.TopicsData}/>}}/>
                         <Route exact path="/myprofile/editprofile" render={()=><EditProfile/>}/>
                         <Route exact path="/myprofile/addnewtopic" render={()=><AddNewTopics/>}/>
                         <Route exact path="/myprofile/addnewdef" render={()=><AddNewDef/>}/>
                         <Route exact path="/myprofile/updatedefs" render={()=><UpdateDefs/>}/>
-                        <Redirect to="/myprofile/topicsdata"/>
+                        <Redirect to="/myprofile"/>
                       </Box>
                    </Grid>
                 </Grid>

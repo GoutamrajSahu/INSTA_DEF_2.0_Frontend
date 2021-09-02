@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
   const listItems = [
     {
-      "to":"/myprofile/topicsdata",
+      "to":"/myprofile",
       "itemName":"My_Topics",
       "icon":<LibraryBooksIcon/>
     },
