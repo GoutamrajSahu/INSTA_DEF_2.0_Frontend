@@ -28,7 +28,7 @@ function TopicContent(props){
     const ID = props.match.params.topicID;
     const [definitions,setDefinitions] = useState(TopicsData[ID].definitions); // this line will change while backend implementation.
 
-    console.log(definitions);
+    // console.log(definitions);
 
     function renderDefinitions(ele,index){
         return (<DefCard key={index} defOn={ele.defOn} definition={ele.definition}/>);

@@ -2,7 +2,6 @@ import React from "react";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Button } from "@material-ui/core";
-import Typography from '@material-ui/core/Typography';
 import { useState } from "react";
 import { Alert, AlertTitle } from '@material-ui/lab';
 
@@ -36,41 +35,42 @@ const UseStyles = makeStyles((theme)=>({
     },
 })); 
 
-function EditProfile(){
+function UpdateDefs(){
 const classes = UseStyles();
 
-const topicDetails = {
-    "topicName":"",
-    "desc":""
-}
+const[formDetails, setDetails] = useState({
+    targetedTopicName:"",
+    targetedDefOn:"",
+    updatedDefOn:"",
+    updatedDefinition:"" 
+});
 
-const[newTopicDetails, setDetails] = useState(topicDetails);
 const[isError, setError] = useState(false);
 const[isSuccess, setSuccess] = useState(false);
+const[topicExist, setExist] = useState(true);
+
 function handleChange(event){
-    setDetails((previousData)=>{
+    setDetails((previousValue)=>{
         return({
-            ...previousData,
-            [event.target.name]: event.target.value
+            ...previousValue,
+            [event.target.name] : event.target.value
         });
-    });
-    // console.log(newTopicDetails);
+    })
 } 
 
 function addToDB(event){ ///Database work need to be done here
- event.preventDefault();
- if(newTopicDetails.topicName === "" || newTopicDetails.desc === ""){
-    setError(true);
- }else{
-    setError(false);
-    console.log("Update to database");
-    console.log(newTopicDetails);
-    setSuccess(true); 
-    setTimeout(()=>{setSuccess(false)},3000)
- }
+    if(formDetails.targetedTopicName === "" || 
+    formDetails.targetedDefOn === "" || 
+    formDetails.updatedDefOn === "" || 
+    formDetails.updatedDefinition === ""){
+     setError(true);
+    }else{
+        setError(false);
+        setSuccess(true);
+        setTimeout(()=>{setSuccess(false)}, 3000);
+        console.log(formDetails);
+    }
 }
-
-
 
     return(
        <Box className={classes.root}>
@@ -85,14 +85,19 @@ function addToDB(event){ ///Database work need to be done here
                 <AlertTitle>Success</AlertTitle>
                 Added successfully!!! — <strong>check it out!</strong>
             </Alert>):<></>}
+
+         {!topicExist?( <Alert severity="warning">
+                <AlertTitle>Warning</AlertTitle>
+                Given topic name doesn't exist. — <strong>check it out!</strong>
+            </Alert>):<></>}
            
             <Box className={classes.inputFields}>
              <TextField 
-             label="Topic Name" 
+             label="Targeted topic name" 
              id="outlined-basic" 
              variant="outlined" 
-            //  value={newTopicDetails.name}
-             name="topicName"
+             value={formDetails.targetedTopicName}
+             name="targetedTopicName"
              onChange={handleChange}
              autoComplete="off"
              ></TextField>
@@ -100,11 +105,35 @@ function addToDB(event){ ///Database work need to be done here
            
             <Box className={classes.inputFields}>
              <TextField
-             label="Topic Description" 
+             label="Targeted definition on" 
              id="outlined-basic" 
              variant="outlined" 
-            //  value={newTopicDetails.email}
-             name="desc"
+             value = {formDetails.targetedDefOn}
+             name="targetedDefOn"
+             onChange={handleChange}
+             autoComplete="off"
+             ></TextField>
+            </Box>
+
+            <Box className={classes.inputFields}>
+             <TextField
+             label="Updated definition on" 
+             id="outlined-basic" 
+             variant="outlined" 
+             value = {formDetails.updatedDefOn}
+             name="updatedDefOn"
+             onChange={handleChange}
+             autoComplete="off"
+             ></TextField>
+            </Box>
+
+            <Box className={classes.inputFields}>
+             <TextField
+             label="Updated definition" 
+             id="outlined-basic" 
+             variant="outlined" 
+             value = {formDetails.updatedDefinition}
+             name="updatedDefinition"
              onChange={handleChange}
              autoComplete="off"
              ></TextField>
@@ -116,4 +145,4 @@ function addToDB(event){ ///Database work need to be done here
     );
 }
 
-export default EditProfile;
+export default UpdateDefs;

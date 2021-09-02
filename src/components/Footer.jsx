@@ -15,6 +15,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { NavLink } from "react-router-dom";
 import { Link as Scroll} from 'react-scroll';
+import { useHistory } from "react-router-dom";
 
 const UseStyles = makeStyles((theme)=>({
 root:{
@@ -31,7 +32,8 @@ upGrid:{
 },
 links:{
     textDecoration:"none",
-    fontSize:20
+    fontSize:20,
+    cursor:"pointer"
 },
 downTexts:{
     height:"20vh",
@@ -52,6 +54,23 @@ function getYear(){
     return(year);
 }
 
+const history = useHistory();
+  
+function handleRoute(event){ 
+const ID = event.target.id;
+    if(ID === "HOME"){
+        history.push("/");
+    }else if(ID === "TOPICS"){
+        history.push("/");
+    }else if(ID === "MY_PROFILE"){
+        history.push("/myprofile");
+    }else if(ID === "ABOUT_US"){
+        history.push("/");
+    }else if(ID === "CONTACT_US"){
+        history.push("/");
+    }
+}
+
     return(
         <Paper className={classes.root} elevation={7}>
            <Grid container xs={12} item>
@@ -70,22 +89,25 @@ function getYear(){
                 <Box className={classes.upGrid}>
                 <Typography style={{fontFamily:"Josefin Sans", fontWeight:"bolder",fontSize: 25, paddingTop:"20px"}}>Menu</Typography>
                    <Typography style={{fontFamily:"Josefin Sans",fontSize: 20, padding:"5px"}}>
+                   
                         <Scroll to="landingPage" smooth={true}>
-                            <NavLink to="/" className={classes.links}> Home</NavLink> <br/>
-                        </Scroll>
-                        <Scroll to="topics" smooth={true}>
-                            <NavLink to="#" className={classes.links}> Topics </NavLink> <br/>
+                            <span className={classes.links} id="HOME" onClick={handleRoute}> Home</span> <br/>
                         </Scroll>
 
-                        <NavLink to="#" className={classes.links}> My Profile</NavLink> <br/>
+                        <Scroll to="topics" smooth={true}>
+                            <span className={classes.links} id="TOPICS" onClick={handleRoute}> Topics</span> <br/>
+                        </Scroll>
+
+                        <span className={classes.links} id="MY_PROFILE" onClick={handleRoute}> My Profile</span> <br/>
 
                         <Scroll to="aboutUs" smooth={true}>
-                            <NavLink to="#" className={classes.links}> About Us</NavLink> <br/>
+                            <span className={classes.links} id="ABOUT_US" onClick={handleRoute}> About Us</span> <br/>
                         </Scroll>
                         
                         <Scroll to="contactUs" smooth={true}>
-                            <NavLink to="#" className={classes.links}> Contact Us </NavLink>
+                            <span className={classes.links} id="CONTACT_US" onClick={handleRoute}> Contact Us</span> <br/>
                         </Scroll>
+
                    </Typography>
                 </Box>
               </Grid>

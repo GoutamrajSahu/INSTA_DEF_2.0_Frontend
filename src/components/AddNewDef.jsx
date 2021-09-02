@@ -2,7 +2,6 @@ import React from "react";
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Button } from "@material-ui/core";
-import Typography from '@material-ui/core/Typography';
 import { useState } from "react";
 import { Alert, AlertTitle } from '@material-ui/lab';
 
@@ -39,38 +38,35 @@ const UseStyles = makeStyles((theme)=>({
 function EditProfile(){
 const classes = UseStyles();
 
-const topicDetails = {
-    "topicName":"",
-    "desc":""
-}
+const[formDetails, setDetails] = useState({
+    topicName:"",
+    defOn:"",
+    definition:"" 
+});
 
-const[newTopicDetails, setDetails] = useState(topicDetails);
 const[isError, setError] = useState(false);
 const[isSuccess, setSuccess] = useState(false);
+const[topicExist, setExist] = useState(true);
+
 function handleChange(event){
-    setDetails((previousData)=>{
+    setDetails((previousValue)=>{
         return({
-            ...previousData,
-            [event.target.name]: event.target.value
+            ...previousValue,
+            [event.target.name] : event.target.value
         });
-    });
-    // console.log(newTopicDetails);
+    })
 } 
 
 function addToDB(event){ ///Database work need to be done here
- event.preventDefault();
- if(newTopicDetails.topicName === "" || newTopicDetails.desc === ""){
-    setError(true);
- }else{
-    setError(false);
-    console.log("Update to database");
-    console.log(newTopicDetails);
-    setSuccess(true); 
-    setTimeout(()=>{setSuccess(false)},3000)
- }
+    if(formDetails.topicName === "" || formDetails.defOn === "" || formDetails.definition === ""){
+     setError(true);
+    }else{
+        setError(false);
+        setSuccess(true);
+        setTimeout(()=>{setSuccess(false)}, 3000);
+        console.log(formDetails);
+    }
 }
-
-
 
     return(
        <Box className={classes.root}>
@@ -85,13 +81,17 @@ function addToDB(event){ ///Database work need to be done here
                 <AlertTitle>Success</AlertTitle>
                 Added successfully!!! — <strong>check it out!</strong>
             </Alert>):<></>}
+         {!topicExist?( <Alert severity="warning">
+                <AlertTitle>Warning</AlertTitle>
+                Given topic name doesn't exist. — <strong>check it out!</strong>
+            </Alert>):<></>}
            
             <Box className={classes.inputFields}>
              <TextField 
              label="Topic Name" 
              id="outlined-basic" 
              variant="outlined" 
-            //  value={newTopicDetails.name}
+             value={formDetails.topicName}
              name="topicName"
              onChange={handleChange}
              autoComplete="off"
@@ -100,11 +100,23 @@ function addToDB(event){ ///Database work need to be done here
            
             <Box className={classes.inputFields}>
              <TextField
-             label="Topic Description" 
+             label="Definition on" 
              id="outlined-basic" 
              variant="outlined" 
-            //  value={newTopicDetails.email}
-             name="desc"
+             value = {formDetails.defOn}
+             name="defOn"
+             onChange={handleChange}
+             autoComplete="off"
+             ></TextField>
+            </Box>
+
+            <Box className={classes.inputFields}>
+             <TextField
+             label="Definition" 
+             id="outlined-basic" 
+             variant="outlined" 
+             value = {formDetails.definition}
+             name="definition"
              onChange={handleChange}
              autoComplete="off"
              ></TextField>

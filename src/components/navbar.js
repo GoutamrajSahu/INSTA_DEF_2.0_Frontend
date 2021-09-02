@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import LibraryBooksRoundedIcon from '@material-ui/icons/LibraryBooksRounded';
 import { NavLink } from 'react-router-dom';
 import { Link as Scroll} from 'react-scroll';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   bar:{
@@ -37,15 +38,30 @@ const useStyles = makeStyles((theme) => ({
  function ButtonAppBar() {
   const classes = useStyles();
 
+  const history = useHistory();
+
+  function handleRoute(event){ 
+    const ID = event.target.innerText;
+        if(ID === "HOME" || ID === "ICON"){
+            history.push("/");
+        }else if(ID === "TOPICS"){
+            history.push("/");
+        }else if(ID === "ABOUT_US"){
+            history.push("/");
+        }else if(ID === "CONTACT_US"){
+            history.push("/");
+        }
+    }
+
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar className={classes.bar}>
           <IconButton edge="start" className={classes.icon} color="inherit" aria-label="menu">
            <Scroll to="landingPage" smooth={true}>
-              <NavLink to="/">
+              <span id="ICON" onClick={handleRoute}>
                 <LibraryBooksRoundedIcon style={{fontSize:30, color:"white"}} />
-              </NavLink>
+              </span>
            </Scroll>
             
           </IconButton>
@@ -54,18 +70,18 @@ const useStyles = makeStyles((theme) => ({
             </Typography>
   
           <Scroll to="landingPage" smooth={true}>
-            <NavLink  to="/" style={{textDecoration:"none", color:"white"}} >
+            <span style={{textDecoration:"none", color:"white"}} id="HOME" onClick={handleRoute}>
              <Button color="inherit" className={classes.btn}>Home</Button>
-            </NavLink>
+            </span>
           </Scroll>
 
           <Scroll to="topics" smooth={true}>
-            <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
+            <span style={{textDecoration:"none", color:"white"}} id="TOPICS" onClick={handleRoute}>
              <Button color="inherit" className={classes.btn}>Topics</Button>
-            </NavLink>
+            </span>
           </Scroll>
          
-          <NavLink  to="/myprofile" style={{textDecoration:"none", color:"white"}} >
+          <NavLink  to="/myprofile/topicsdata" style={{textDecoration:"none", color:"white"}} >
            <Button color="inherit" className={classes.btn}>My_profile</Button>
           </NavLink>  
           
@@ -82,15 +98,15 @@ const useStyles = makeStyles((theme) => ({
           </NavLink>
 
           <Scroll to="aboutUs" smooth={true}>
-            <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
+            <span style={{textDecoration:"none", color:"white"}} id="ABOUT_US" onClick={handleRoute}>
              <Button color="inherit" className={classes.btn}>About_us</Button>
-            </NavLink>
+            </span>
           </Scroll>
           
           <Scroll to="contactUs" smooth={true}>
-            <NavLink  to="#" style={{textDecoration:"none", color:"white"}} >
-            <Button color="inherit" className={classes.btn}>Contact</Button>
-            </NavLink>
+            <span style={{textDecoration:"none", color:"white"}} id="CONTACT_US" onClick={handleRoute}>
+            <Button color="inherit" className={classes.btn}>Contact_US</Button>
+            </span>
           </Scroll>
           
         </Toolbar>
