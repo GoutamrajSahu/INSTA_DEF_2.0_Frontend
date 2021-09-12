@@ -5,7 +5,7 @@ const teamMembers=[
         "id": 1,
         "name":"Jhasaketan Swain",
         "rollNo": "19MCA005",
-        "image":"/assets/randomProfilePic.png",
+        "image":"/assets/Siddhu.png",
         "contribution":"Information Collector"
     },
     {

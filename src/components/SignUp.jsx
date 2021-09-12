@@ -93,7 +93,7 @@ function handleChangeForRetypePass(event){
         }
         else{
             setBool(false);
-            axios.post("http://localhost:5000/",qs.stringify(signupDetails))
+            axios.post("http://localhost:5000/signup",qs.stringify(signupDetails))
             .then((res)=>{console.log(res.data)}) // coming from backend
             
             // axios({

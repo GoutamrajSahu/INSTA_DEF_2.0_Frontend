@@ -60,7 +60,7 @@ return(
         </Box>    
 
         <Typography className={classes.aboutInfo} data-aos="fade-up" data-aos-duration="2200">
-        We are the team <span style={{fontSize:"25px"}}>"Implementation",</span> <br/>and MCA final year students of GIET University.
+        We are the team <span style={{fontSize:"25px","color":"#0f4c75"}}>"Implementation",</span> <br/>and MCA final year students of GIET University.
         </Typography>
     </Box>
 );
