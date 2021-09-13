@@ -10,6 +10,7 @@ import axios from "axios";
 import { useState } from 'react';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import qs from "qs";
+import { useHistory } from "react-router-dom";
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // import GitHubIcon from '@material-ui/icons/GitHub';
 // import FacebookIcon from '@material-ui/icons/Facebook';
@@ -59,7 +60,9 @@ const [retypePassword, setRetypePassword] = useState({
 });
 const [passwordNotMatch, setBool] = useState(false);
 const [emptyFieldError, setError] = useState(false);
+const [emailRegistered, setCheckMail] = useState(false);
 
+const history = useHistory();
 // useEffect(()=>{
 // },[]);
 
@@ -94,7 +97,13 @@ function handleChangeForRetypePass(event){
         else{
             setBool(false);
             axios.post("http://localhost:5000/signup",qs.stringify(signupDetails))
-            .then((res)=>{console.log(res.data)}) // coming from backend
+            .then((res)=>{
+                if(res.data == true){
+                    history.push("/login");
+                }else{
+                    setCheckMail(true);
+                }
+            }) // coming from backend
             
             // axios({
             //     method:"POST",
@@ -127,6 +136,11 @@ return(
                     {emptyFieldError?(<Alert severity="error">
                     <AlertTitle>Error</AlertTitle>
                     All fields must be filled. — <strong>check it out!</strong>
+                    </Alert>):<></>}
+
+                    {emailRegistered?(<Alert severity="error">
+                    <AlertTitle>Error</AlertTitle>
+                    Email already registered. — <strong>check it out!</strong>
                     </Alert>):<></>}
 
                     <TextField 
